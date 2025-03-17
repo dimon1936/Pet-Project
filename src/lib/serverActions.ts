@@ -2,7 +2,7 @@
 
 import { User } from '../types';
 
-const API_URL = 'https://jsonplaceholder.typicode.com';
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://jsonplaceholder.typicode.com';
 
 export async function getUsers(): Promise<User[]> {
   const response = await fetch(`${API_URL}/users`, { cache: 'no-store' });

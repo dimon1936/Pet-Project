@@ -1,6 +1,6 @@
 import { User } from '../types';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL;
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://jsonplaceholder.typicode.com';
 
 export async function fetchUsers(): Promise<User[]> {
   const response = await fetch(`${API_URL}/users`);
